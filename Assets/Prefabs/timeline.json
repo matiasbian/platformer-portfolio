@@ -1,0 +1,36 @@
+{
+    "globant": {
+        "title": "Game Developer",
+        "company": "Globant",
+        "url": "https://www.globant.com/",
+        "description": "",
+        "period": "January 2023 - Present"
+    },
+    "ratherlabs": {
+        "title": "Game Developer",
+        "company": "Rather Labs",
+        "url": "https://www.ratherlabs.com/",
+        "description": "Involved on all stages of the Apex Development Cycle, developing mechanics and multiplayer features for an NFT based game",
+        "period": "October 2022 - January 2023"
+    }, 
+    "agonalea": {
+        "title": "Lead Game Dev",
+        "company": "Agonalea Games",
+        "url": "https://agonaleagames.com/",
+        "description": "Involved on all stages of Beat Arena's Development cycle. One of the selected games for the Indie Games Fund by Google",
+        "period": "August 2020 - November 2022"
+    },
+    "cloodie": {
+        "title": "Full-stack Web Developer",
+        "company": "Cloodie",
+        "url": "https://cloodie.com/",
+        "description": "Medicine software company where I participated in the designing and implementation of a microservices structure for an telemedicine application with Node.Js, aswell developing modules with Vue.js",
+        "period": "July 2019 - March 2021"
+    },
+    "delivergames": {
+        "title": "Indie game developer",
+        "company": "Deliver Games",
+        "description": "Developed mobile games with Unity and Godot, some of them published in the playstore and itch.io",
+        "period": "January 2017- June 2019"
+    }
+}

@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class BlockData : MonoBehaviour
 {
-    public string title;
-    public string description;
+    public string id;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +26,7 @@ public class BlockData : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.transform.CompareTag("Player")) {
-            PopUpManager.Get().ShowPopUp(title, description);
+            PopUpManager.Get().ShowPopUp(id);
         }
     }
 }
