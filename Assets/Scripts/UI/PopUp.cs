@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Platformer;
 public class PopUp : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI title;
@@ -22,5 +23,9 @@ public class PopUp : MonoBehaviour
 
     public void VisitLink () {
         Application.OpenURL(URL);
+    }
+
+    public void ResetLevel () {
+        GameObject.FindObjectOfType<PlayerController>().deathState = true;
     }
 }

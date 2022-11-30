@@ -6,6 +6,7 @@ using SimpleJSON;
 public class PopUpManager : MonoBehaviour
 {
     [SerializeField] PopUp popUp;
+    [SerializeField] PopUp popUpReset;
     [SerializeField] TextAsset json;
     JSONNode parsedJSON;
 
@@ -32,8 +33,17 @@ public class PopUpManager : MonoBehaviour
         string company = parsedJSON[id]["company"];
         string title = parsedJSON[id]["title"];
         string period = parsedJSON[id]["period"];
-        string texttitle = $"<#000000>{company}</color> - {title}";
+        string texttitle = !string.IsNullOrEmpty(company) ?  $"<#000000>{company}</color> - {title}" : title;
         popUp.SetText(texttitle, company, parsedJSON[id]["description"], period, parsedJSON[id]["url"]);
+    }
+
+    public void ShowPopUpReset (string id) {
+        popUpReset.gameObject.SetActive(true);
+        string company = parsedJSON[id]["company"];
+        string title = parsedJSON[id]["title"];
+        string period = parsedJSON[id]["period"];
+        string texttitle = !string.IsNullOrEmpty(company) ?  $"<#000000>{company}</color> - {title}" : title;
+        popUpReset.SetText(texttitle, company, parsedJSON[id]["description"], period, parsedJSON[id]["url"]);
     }
 
     public void ClosePopUp () {
