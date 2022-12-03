@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Fireworks : MonoBehaviour
 {
+    public AudioClip clip;
+    public AudioSource source;
     public ParticleSystem[] fireworks;
     bool startAnim;
     // Start is called before the first frame update
@@ -32,6 +34,7 @@ public class Fireworks : MonoBehaviour
         while (true) {
             int randomIndex = Random.Range(0, fireworks.Length);
             fireworks[randomIndex].Play();
+            source.PlayOneShot(clip);
             float randomWait = Random.Range(0.2f, 0.6f);
             yield return new WaitForSeconds(randomWait);
         }

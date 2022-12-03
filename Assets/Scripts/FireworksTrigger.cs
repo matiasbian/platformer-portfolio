@@ -5,9 +5,12 @@ using UnityEngine;
 public class FireworksTrigger : MonoBehaviour
 {
     // Start is called before the first frame update
+    bool firstTime = true;
+    bool firstTimePopUp = true;
+    public AudioSource audioSource;
+    public AudioClip victoryClip;
     void Start()
     {
-        
     }
 
     /// <summary>
@@ -18,10 +21,17 @@ public class FireworksTrigger : MonoBehaviour
     {
         if (other.CompareTag("Firework")) {
             other.GetComponent<Fireworks>().StartAnim();
+            if (firstTime) {
+                audioSource.PlayOneShot(victoryClip);
+                firstTime = false;
+            }
         }
 
         if (other.CompareTag("Castle")) {
-            PopUpManager.Get().ShowPopUpReset("thanks");
+            if (firstTimePopUp) {
+                PopUpManager.Get().ShowPopUpReset("thanks");
+                firstTimePopUp = false;
+            }
         }
     }
 

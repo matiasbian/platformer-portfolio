@@ -33,7 +33,7 @@ public class PopUpManager : MonoBehaviour
         string company = parsedJSON[id]["company"];
         string title = parsedJSON[id]["title"];
         string period = parsedJSON[id]["period"];
-        string texttitle = !string.IsNullOrEmpty(company) ?  $"<#000000>{company}</color> - {title}" : title;
+        string texttitle = !string.IsNullOrEmpty(company) ?  $"<#C12B2B>{company}</color> - {title}" : title;
         popUp.SetText(texttitle, company, parsedJSON[id]["description"], period, parsedJSON[id]["url"]);
     }
 

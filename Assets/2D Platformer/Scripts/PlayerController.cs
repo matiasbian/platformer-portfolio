@@ -16,16 +16,22 @@ namespace Platformer
 
         private bool isGrounded;
         public Transform groundCheck;
+        public AudioClip jump;
+        public AudioClip coin;
 
         private Rigidbody2D rigidbody;
         private Animator animator;
         private GameManager gameManager;
+        private AudioSource audioSource;
+
+        private bool deadFirstTrigger = false;
 
         void Start()
         {
             rigidbody = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+            audioSource = GetComponent<AudioSource>();
         }
 
         private void FixedUpdate()
@@ -49,6 +55,7 @@ namespace Platformer
             if(Input.GetKeyDown(KeyCode.Space) && isGrounded )
             {
                 rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+                audioSource.PlayOneShot(jump);
             }
             if (!isGrounded)animator.SetInteger("playerState", 2); // Turn on jump animation
 
@@ -94,6 +101,7 @@ namespace Platformer
             {
                 gameManager.coinsCounter += 1;
                 Destroy(other.gameObject);
+                audioSource.PlayOneShot(coin);
             }
         }
     }
