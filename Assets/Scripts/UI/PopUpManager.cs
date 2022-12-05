@@ -51,6 +51,14 @@ public class PopUpManager : MonoBehaviour
         popUp.SetText("", "", "", "", "");
     }
 
+    public void DisableDisabledBlocks () {
+        BlockData[] blocks = FindObjectsOfType<BlockData>();
+
+        foreach (var b in blocks) {
+            if (!parsedJSON[b.id]["enabled"]) b.gameObject.SetActive(false);
+        }
+    }
+
 
     IEnumerator GetRequest(string uri)
     {
@@ -72,6 +80,7 @@ public class PopUpManager : MonoBehaviour
                 case UnityWebRequest.Result.Success:
                     Debug.Log("Received: " + webRequest.downloadHandler.text);
                     parsedJSON = JSON.Parse(webRequest.downloadHandler.text);
+                    DisableDisabledBlocks();
                     break;
             }
         }
