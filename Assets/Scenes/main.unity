@@ -9078,7 +9078,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.681909, y: 1.8719454}
+  m_Offset: {x: 4.681909, y: 0.3528576}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9089,7 +9089,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.963819, y: 5.34389}
+  m_Size: {x: 10.963819, y: 2.3057146}
   m_EdgeRadius: 0
 --- !u!212 &922786451
 SpriteRenderer:
@@ -10598,7 +10598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.89800006}
   m_AnchorMax: {x: 0.058520835, y: 1}
-  m_AnchoredPosition: {x: 121.95969, y: -4.4890137}
+  m_AnchoredPosition: {x: 121.959564, y: -4.4890137}
   m_SizeDelta: {x: -5.8899994, y: -4.220001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1163444921
@@ -14530,6 +14530,10 @@ PrefabInstance:
       propertyPath: death
       value: 
       objectReference: {fileID: 8300000, guid: b02f7036138d3e346b83dd9921b1dea6, type: 3}
+    - target: {fileID: 6952628394585513909, guid: a3dc7dd79a2fbc341a3fc828503f1ca9, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 72
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3dc7dd79a2fbc341a3fc828503f1ca9, type: 3}
 --- !u!1001 &8125563718887698157

@@ -26,6 +26,8 @@ namespace Platformer
 
         private bool deadFirstTrigger = false;
 
+        public LayerMask groundLayer;
+
         void Start()
         {
             rigidbody = GetComponent<Rigidbody2D>();
@@ -79,8 +81,8 @@ namespace Platformer
 
         private void CheckGround()
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.transform.position, 0.2f);
-            isGrounded = colliders.Length > 1;
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.transform.position, 0.2f, layerMask: groundLayer);
+            isGrounded = colliders.Length >= 1;
         }
 
         private void OnCollisionEnter2D(Collision2D other)
