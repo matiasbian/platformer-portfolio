@@ -85,9 +85,15 @@ namespace Platformer
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.tag == "Enemy")
+            Debug.Log(other.collider.transform.name);
+            if (other.collider.transform.tag == "Enemy")
             {
                 deathState = true; // Say to GameManager that player is dead
+            }
+            else if (other.collider.transform.CompareTag("Kill")) {
+                other.collider.gameObject.GetComponentInParent<EnemyAI>().Kill(audioSource);
+                rigidbody.AddForce (new Vector2(- rigidbody.velocity.x, 1) * 5, ForceMode2D.Impulse);
+
             }
             else
             {

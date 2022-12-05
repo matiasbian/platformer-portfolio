@@ -12,6 +12,8 @@ namespace Platformer
 
         private Rigidbody2D rigidbody; 
         public Collider2D triggerCollider;
+        public GameObject coin;
+        public AudioClip plop;
         
         void Start()
         {
@@ -35,6 +37,12 @@ namespace Platformer
         {
             transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
             moveSpeed *= -1;
+        }
+
+        public void Kill (AudioSource audioSource) {
+            Instantiate(coin, transform.position, transform.rotation);
+            audioSource.PlayOneShot(plop);
+            Destroy(gameObject);
         }
     }
 }
